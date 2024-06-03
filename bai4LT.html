@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let arry = prompt("Nhập chuỗi câu");
+    let tu = arry.split(" ");
+    let dem = 0;
+    for (let i = 0; i < tu.length; i++) {
+        if (tu[i].trim() !== "") {
+            dem++;
+        }
+    }
+    console.log("Số từ trong chuỗi là " + dem);
+    </script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Tìm từ tiếng Việt</h1>
+<form id="searchForm">
+    <label for="searchInput">Nhập từ tiếng Anh:</label>
+    <input type="text" id="searchInput" name="searchInput">
+    <button type="submit">Tìm kiếm</button>
+</form>
+
+<div id="result"></div>
+
+<script>
+    let englishWords = ["hello", "world", "cat", "dog", "tree"];
+    let vietnameseWords = ["xin chào", "thế giới", "mèo", "chó", "cây"];
+
+    document.getElementById("searchForm").addEventListener("submit", function(event) {
+        event.preventDefault(); // Ngăn chặn việc gửi form đi để không làm tải lại trang
+
+        let searchInput = document.getElementById("searchInput").value.toLowerCase();
+        let resultElement = document.getElementById("result");
+
+        let found = false;
+        for (let i = 0; i < englishWords.length; i++) {
+            if (englishWords[i] === searchInput) {
+                let vietnameseWord = vietnameseWords[i];
+                resultElement.textContent = "Từ tiếng Anh '" + searchInput + "' được dịch sang tiếng Việt là: " + vietnameseWord;
+                found = true;
+                break;
+            }
+        }
+
+        if (!found) {
+            resultElement.textContent = "Không tìm thấy từ tiếng Anh '" + searchInput + "' trong danh sách.";
+        }
+    });
+</script>
+</body>
+
+</html> 
